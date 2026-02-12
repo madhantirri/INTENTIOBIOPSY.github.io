@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTENTIO BIOPSY DEVICE - Advanced Medical Innovation</title>
+    <meta name="description"
+        content="Intentio Biopsy Device Private Limited - Innovating bone biopsy with automated, precise, and safe medical devices.">
+    <link rel="icon" type="image/png" href="healthcare.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- ECG Preloader -->
+    <div id="preloader">
+        <div class="ecg-container">
+            <svg class="ecg-svg" viewBox="0 0 300 150">
+                <!-- Heartbeat Path: Flat -> P -> QRS -> T -> Flat -->
+                <path class="ecg-line"
+                    d="M0,75 H40 L50,65 L60,75 L80,75 L90,95 L100,20 L110,130 L120,75 L150,75 Q170,35 190,75 H300" />
+            </svg>
+        </div>
+        <div class="preloader-text">INTENTIO<span>BIOPSY</span></div>
+    </div>
+
+    <!-- Award Animation Loader -->
+    <div id="award-loader" class="fade-out">
+        <lottie-player src="awardanimation.json" background="transparent" speed="1" style="width: 400px; height: 400px;"
+            loop autoplay></lottie-player>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">INTENTIO<span>BIOPSY</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#ibone-biopsy">I-Bone</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#avenues">Granted IP</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><button id="theme-toggle" style="background: none; border: none; cursor: pointer; padding: 0;">
+                            <img src="night-mode.png" alt="Night Mode"
+                                style="width: 30px; height: 30px; transition: transform 0.5s;">
+                        </button></li>
+                    <li><a href="#contact" class="btn btn-primary" style="margin-left: 0; padding: 10px 24px;">Contact
+                            Us</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>i-Bone Biopsy Device</h1>
+                <p class="hero-subtitle">INTENTIO BIOPSY DEVICE PRIVATE LIMITED</p>
+                <div class="hero-buttons">
+                    <a href="#product" class="btn btn-primary">Discover Innovation</a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About</h2>
+                    <h3>What is Bone Biopsy</h3>
+                    <div class="divider"></div>
+                </div>
+                <div class="glass-panel" style="padding: 3rem; max-width: 900px; margin: 0 auto;">
+                    <p>Bone biopsy involves a procedure to insert a biopsy needle (known as Jamshidi Needle) and cannula
+                        inside the bone. This insertion of the needle is manual. This insertion is not at all controlled
+                        and fully manual hence a lot of care needs to be taken while doing bone biopsy to avoid the risk
+                        of bone fracture, tumor contamination. In present invention we tried to eliminated the risk of
+                        bone fracture by precisely controlling pressure for inserting the needle by a surgeon or
+                        operator during bone biopsy procedure.</p>
+                    <p>The innovation lies in the process where a manual bone biopsy process has been converted to a
+                        fully- automatic process by using controlled machine derived mechanism. It uses a powered device
+                        and hence surgeon need not to put force, further we are working to get this into tele robotic
+                        procedure. The present device in current form has been granted Indian patent and thus have a
+                        novelty and non-obvious solution which is a pre-requisite for any patent.</p>
+                    <p>The present bone biopsy device is a result of the specific issues faced by performing thousands
+                        of biopsies carried out by one of our founder Dr. Abhijeet Salunke.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- I Bone Biopsy Section -->
+        <section id="ibone-biopsy" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>I Bone Biopsy</h2>
+                    <h3>i Bone Biopsy Device</h3>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- Introduction -->
+                <div class="glass-panel"
+                    style="padding: 3rem; margin-bottom: 4rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">We a team of two orthopedic onco surgeons and two
+                        engineers identified the limitation of the current Bone Biopsy process which is a manual process
+                        that results in inaccurate results in 1st attempt, and designed an intelligent biopsy device
+                        that can perform the procedure with good yield in the 1st time with less discomfort to the
+                        patient and ease of handing to Surgeon.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">The device would benefit ortho-surgeons,
+                        onco-ortho-surgeons, and medical practitioner who perform bone biopsy of any part of the body
+                        for diagnosis. It will help to ease the process by making it automatic. The ultimate benefit
+                        will be to patients where the residue pain will be reduced.</p>
+                </div>
+
+                <!-- Limitations vs Solution Grid (Stacked Layout) -->
+                <div class="limitations-solution-wrapper" style="display: flex; flex-direction: column; gap: 3rem;">
+                    <!-- Limitations -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-top: 5px solid #ef4444;">
+                        <h3
+                            style="color: #ef4444; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-exclamation-circle"></i> Current System Limitations
+                        </h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-times"
+                                    style="position: absolute; left: 0; top: 5px; color: #ef4444;"></i>
+                                • Current process of performing bone biopsies, particularly for bone tumors, bone marrow
+                                biopsy, and related orthopaedic procedures, presents several challenges such as:
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-times"
+                                    style="position: absolute; left: 0; top: 5px; color: #ef4444;"></i>
+                                • It requires significant manual effort.
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-times"
+                                    style="position: absolute; left: 0; top: 5px; color: #ef4444;"></i>
+                                • Risk of complications such as bone fractures, contamination of tumor cells,
+                                bleeding, infection, and damage to nerves and blood vessels.
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-times"
+                                    style="position: absolute; left: 0; top: 5px; color: #ef4444;"></i>
+                                • It is a painful procedure.
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-times"
+                                    style="position: absolute; left: 0; top: 5px; color: #ef4444;"></i>
+                                • It is complex and demanding when tumors are located within the medullary cavity with
+                                intact cortical bone.
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-times"
+                                    style="position: absolute; left: 0; top: 5px; color: #ef4444;"></i>
+                                • All these factors compromise patient safety and well-being.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Solution -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-top: 5px solid #22c55e;">
+                        <h3
+                            style="color: #22c55e; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-check-circle"></i> Proposed Solution
+                        </h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-check"
+                                    style="position: absolute; left: 0; top: 5px; color: #22c55e;"></i>
+                                • The product is a drill machine type tool having many features such as:
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-check"
+                                    style="position: absolute; left: 0; top: 5px; color: #22c55e;"></i>
+                                • Controlled forward motion and controlled rotation for drilling operation.
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-check"
+                                    style="position: absolute; left: 0; top: 5px; color: #22c55e;"></i>
+                                • Feedback of force and current for optimized drilling control.
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-check"
+                                    style="position: absolute; left: 0; top: 5px; color: #22c55e;"></i>
+                                • Automatic stopping mechanism upon detecting cortical breach.
+                            </li>
+                            <li
+                                style="margin-bottom: 1rem; position: relative; padding-left: 2rem; color: var(--text-muted);">
+                                <i class="fas fa-check"
+                                    style="position: absolute; left: 0; top: 5px; color: #22c55e;"></i>
+                                • Accurate and high yield of bone marrow specimen in a single attempt.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section id="product" class="section product-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Product</h2>
+                    <h3>Bone Biopsy Device</h3>
+                    <div class="divider"></div>
+                </div>
+                <div class="product-showcase glass-panel">
+                    <div style="text-align: center;">
+                        <img src="biopsy-device.png" alt="Bone Biopsy Device" class="clay-image">
+                    </div>
+
+                    <p>This proposed intelligent bone drill and biopsy (I-bone biopsy) device will obtain good amount of
+                        tissue for diagnosis of disease like bone cancer, bone marrow diseases including infection,
+                        blood cancers (leukaemia), leukopenia, leukocytosis, thrombocytopenia, thrombocytosis,
+                        pancytopenia and polycythemia with higher accuracy and safety. The expert also suggests bone
+                        marrow examination for cases such as (a) Fevers of unknown origin (b) Anemia (c)
+                        Hemochromatosis. The histopathological diagnosis is required for proper treatment. Expert may
+                        suggest with chemotherapy, surgery and radiation treatment based on the report. This device will
+                        make bone biopsy procedure minimally morbidity ( pain, residual pain and discomfort) to patient
+                        with excellent tissue for diagnosis of the diseases by the pathologist.</p>
+                    <p>This i-bone drill biopsy device is a fully controlled, motorized, and powered system for bone
+                        biopsy with unique depth, current and pressure sensors leading to precise, perfect bone / bone
+                        marrow specimen collection that will be used for diagnosis of diseases (bone cancer and
+                        infections and bone marrow abnormalities). This device will reduce morbidity to the patient
+                        following bone biopsy by obtaining long tissue cores with limited penetrations into the affected
+                        bone and risk of fracture.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation & Avenues Section -->
+        <section id="avenues" class="section avenues-section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Innovation & Avenues</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- Prosthetic Hand Feature -->
+                <div class="glass-panel"
+                    style="padding: 3rem; margin-bottom: 4rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <h3 style="color: #0077b6; margin-bottom: 0.5rem; font-size: 1.8rem;">Prosthetic Hand</h3>
+                    <p class="subtitle" style="font-size: 1rem; color: #64748b; margin-bottom: 1.5rem;">(Ahmedabad Hand)
+                    </p>
+                    <p style="font-size: 1.1rem;">An advanced prosthetic solution designed for functionality and
+                        accessibility.</p>
+                </div>
+
+                <!-- Granted IP Gallery -->
+                <div class="glass-panel" style="padding: 3rem; margin-bottom: 5rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: #0077b6;">Granted Intellectual Property
+                    </h3>
+
+                    <!-- IP Images -->
+                    <div class="ip-gallery"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted1.jpg" alt="Scapula Implant"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                            <h4 style="margin-top: 1rem; font-size: 1rem; color: var(--text-main);">Scapula Implant</h4>
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted2.jpg" alt="Metacarpel Implant"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                            <h4 style="margin-top: 1rem; font-size: 1rem; color: var(--text-main);">Metacarpel Implant
+                            </h4>
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted3.png" alt="Metaphyseal Implant"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                            <h4 style="margin-top: 1rem; font-size: 1rem; color: var(--text-main);">Metaphyseal Implant
+                            </h4>
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted4.jpg" alt="Granted IP Certificate 4"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted5.jpg" alt="Granted IP Certificate 5"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted6.jpg" alt="Granted IP Certificate 6"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+
+                        <!-- New Images -->
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted7.jpg" alt="Granted IP 7"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted8.jpg" alt="Granted IP 8"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted9.jpg" alt="Granted IP 9"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted10.jpg" alt="Granted IP 10"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted11.jpg" alt="Granted IP 11"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted12.jpg" alt="Granted IP 12"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted13.jpg" alt="Granted IP 13"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/granted15.jpg" alt="Granted IP 15"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/381708_grater_page-0001.jpg" alt="Grater Patent"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div class="ip-card" style="text-align: center;">
+                            <img src="Granted IP/401412_capacitor-rb_page-0001.jpg" alt="Capacitor Patent"
+                                style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Avenues & Funds -->
+                <div class="avenues-block" style="margin-bottom: 5rem;">
+                    <h3 style="text-align: center; margin-bottom: 3rem;">Avenues & Support</h3>
+                    <div class="funds-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
+                        <div class="glass-panel"
+                            style="padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 120px;">
+                            <span class="fund-item">BIRAC SEED Fund</span>
+                        </div>
+                        <div class="glass-panel"
+                            style="padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 120px;">
+                            <span class="fund-item">Start-Up India Seed Fund</span>
+                        </div>
+                        <div class="glass-panel"
+                            style="padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 120px;">
+                            <span class="fund-item">NIDHI-SSS</span>
+                        </div>
+                        <div class="glass-panel"
+                            style="padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 120px;">
+                            <span class="fund-item">Gujarat Industrial Policy 2020</span>
+                        </div>
+                        <div class="glass-panel"
+                            style="padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 120px;">
+                            <span class="fund-item">NIDHI-PRAYAS</span>
+                        </div>
+                        <div class="glass-panel"
+                            style="padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 120px;">
+                            <span class="fund-item">E-CBC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Incubation -->
+                <div class="incubation-block" style="text-align: center; margin-bottom: 5rem;">
+                    <h3 style="margin-bottom: 2rem;">We are Incubated at</h3>
+                    <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+                        <div class="glass-panel"
+                            style="padding: 2rem 5rem; font-size: 2rem; font-weight: 800; color: #0077b6; letter-spacing: 1px;">
+                            <span class="fund-item" style="color: #0077b6;">iHub</span>
+                            <!-- Kept brand color but cleaned up -->
+                        </div>
+                        <div class="glass-panel"
+                            style="padding: 2rem 5rem; font-size: 2rem; font-weight: 800; color: #0077b6; letter-spacing: 1px;">
+                            <span class="fund-item" style="color: #0077b6;">GuSEC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venues Gallery -->
+                <div class="venues-gallery">
+                    <h3 style="text-align: center; margin-bottom: 3rem;">Event Highlights</h3>
+                    <div class="grid-gallery"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                        <img src="venues/venues1.jpg" alt="Event Venue 1" class="glass-panel"
+                            style="width: 100%; height: 300px; object-fit: cover; padding: 0.5rem; border-radius: 12px;">
+                        <img src="venues/venues2.jpg" alt="Event Venue 2" class="glass-panel"
+                            style="width: 100%; height: 300px; object-fit: cover; padding: 0.5rem; border-radius: 12px;">
+                        <img src="venues/venues3.jpg" alt="Event Venue 3" class="glass-panel"
+                            style="width: 100%; height: 300px; object-fit: cover; padding: 0.5rem; border-radius: 12px;">
+                        <img src="venues/venues4.jpg" alt="Event Venue 4" class="glass-panel"
+                            style="width: 100%; height: 300px; object-fit: cover; padding: 0.5rem; border-radius: 12px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="section awards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Awards and Grants</h2>
+                    <div class="divider"></div>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 3rem; color: #475569; font-weight: 500;">
+                        <li>Zydus Innovation Award 2025 • SSIP 2.0 IITRAM cell grant • Ihub S4 Grant</li>
+                    </ul>
+                </div>
+
+                <div class="awards-grid">
+                    <div class="award-item"><img src="Awards/Award1.jpg" alt="Award 1" class="award-img"></div>
+                    <div class="award-item"><img src="Awards/Award2.jpg" alt="Award 2" class="award-img"></div>
+                    <div class="award-item"><img src="Awards/Award3.jpg" alt="Award 3" class="award-img"></div>
+                    <div class="award-item"><img src="Awards/Award4.jpg" alt="Award 4" class="award-img"></div>
+                    <div class="award-item"><img src="Awards/Award5.jpg" alt="Award 5" class="award-img"></div>
+                    <div class="award-item"><img src="Awards/Award6.jpg" alt="Award 6" class="award-img"></div>
+                    <div class="award-item"><img src="Awards/Award7.jpg" alt="Award 7" class="award-img"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="section team-section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Core Team Members</h2>
+                    <div class="divider"></div>
+                </div>
+                <!-- Dr. Abhijeet Salunke -->
+                <div class="team-member glass-panel" style="margin-bottom: 3rem; overflow: hidden;">
+                    <div class="member-info" style="padding: 3rem;">
+                        <img src="founders/abhijeet.png" alt="Dr. Abhijeet Salunke" class="team-image">
+                        <h3 style="text-align: center;">Dr. Abhijeet Salunke</h3>
+                        <div style="text-align: center;"><span class="role">Founder</span></div>
+                        <br>
+                        <p>Dr. Salunke specializes in Orthopedic Oncology, with clinical fellowships at National
+                            University Hospital(NUH), Singapore, travelling fellowship at Memorial Sloan Kettering
+                            Cancer Centre(MSKCC), New York, USA, & research fellowship at Tata Memorial Hospital,
+                            Mumbai.</p>
+                        <p>A recipient of the Silver Jubilee Oration at IOACON 2022. Dr. Salunke has over 100 published
+                            articles in indexed journals, with 1200+ citations.</p>
+                        <p>His expertise includes complex limb salvage surgeries and latest innovations in surgical
+                            oncology.He thinks that his journey is continuing for the service to humanity with amazing
+                            zeal like a never ending yajna.</p>
+                        <p>Dr Salunke completed his Masters in Orthopedic surgery under National Board of Examinations
+                            New Delhi. He was amongst very few to get awarded the prestigious Musculoskeletal Oncology
+                            fellowship at National University Hospital (NUH) Singapore for one year duration under
+                            Emeritus Professor Dr Robert Pho, Dr.Mark Puhaindran and Dr.Gurpal Singh.</p>
+                        <p>Dr.Salunke got selected for prestigious Indo-American Cancer Association (IACA) Fellowship at
+                            prestigious Memorial Sloan Kettering Cancer Center (MSKCC) New York, USA & Prof.Dr.John
+                            Healey. mentored him.</p>
+                        <p>Dr Abhijeet joined as Consultant Orthopedic Oncosurgeon in Gujarat Cancer & Research
+                            Institute (GCRI), Ahemdabad.</p>
+                        <p>Gujarat Cancer & Research Institute (GCRI) is 750 bedded exclusive cancer hospital</p>
+                        <p>He has performed more than 1000 complex orthopaedic oncosurgery cases.</p>
+                    </div>
+                </div>
+
+                <!-- Dr. Krupa Shah -->
+                <div class="team-member glass-panel" style="margin-bottom: 3rem; overflow: hidden;">
+                    <div class="member-info" style="padding: 3rem;">
+                        <img src="founders/krupa.jpg" alt="Dr. Krupa Shah" class="team-image">
+                        <h3 style="text-align: center;">Dr. Krupa Shah</h3>
+                        <div style="text-align: center;"><span class="role">Co-Founder</span></div>
+                        <br>
+                        <p>Dr Krupa Shah has completed her Ph.D from IIT Gandhinagar in 2015. Her research work includes
+                            condition monitoring and diagnostics of power transformer. She has received university rank
+                            during her Bachelor degree program in Electrical Engineering. She has about 17 years of
+                            teaching and research experience in the academic institutes. She has also worked with
+                            Electricity board after completing her masters for about two yeaars. Currently she is
+                            working with Institute of Infrastructure Technology Research and Management (IITRAM),
+                            Ahmedabad in Electrical Engineering Discipline.</p>
+                    </div>
+                </div>
+
+                <!-- Dr. Raghavendra Bhalerao -->
+                <div class="team-member glass-panel" style="margin-bottom: 3rem; overflow: hidden;">
+                    <div class="member-info" style="padding: 3rem;">
+                        <img src="founders/bhalerao.jpg" alt="Dr. Raghavendra Bhalerao" class="team-image">
+                        <h3 style="text-align: center;">Dr. Raghavendra Bhalerao</h3>
+                        <div style="text-align: center;"><span class="role">Co-Founder</span></div>
+                        <br>
+                        <p>I earned my PhD from Indian Institute of Technology Bombay, in 2016, Master's degree in
+                            Spatial Information Technology from Devi Ahliya University in 2010 with University Gold
+                            Medal. Prior to that he worked with HCL Technologies as SAP Basic Consultant for 2 years. I
+                            finished B.Tech. in Electronics and Communication from RGPV Bhopal. After finishing PhD I
+                            joined IITRAM as an assistant professor in 2016.</p>
+                    </div>
+                </div>
+
+                <!-- Mr. Kaushal Panchal -->
+                <div class="team-member glass-panel" style="margin-bottom: 3rem; overflow: hidden;">
+                    <div class="member-info" style="padding: 3rem;">
+                        <img src="founders/Kaushal.jpg" alt="Mr. Kaushal Panchal" class="team-image">
+                        <h3 style="text-align: center;">Mr. Kaushal Panchal</h3>
+                        <div style="text-align: center;"><span class="role">Partner</span></div>
+                        <br>
+                        <p>Kaushal Panchal is a seasoned entrepreneur and the visionary owner of Autus Healthcare, a
+                            leading provider of orthopaedic implants and medical devices. With over 15 years of
+                            extensive experience in the healthcare industry, he has been instrumental in delivering
+                            high-quality medical solutions tailored to the evolving needs of the sector.</p>
+                        <p>For the past five years, Autus Healthcare has been at the forefront of orthopaedic
+                            innovations, ensuring excellence in product quality and patient care. Under Mr. Panchal’s
+                            leadership, the company continues to expand its footprint across Gujarat and Maharashtra,
+                            catering to healthcare professionals with cutting-edge implants and devices.</p>
+                        <p>Now, taking a step further in medical advancements, he is set to introduce an innovative new
+                            product to the market, reinforcing his commitment to enhancing surgical outcomes and
+                            improving patient mobility. His expertise, combined with a passion for healthcare
+                            innovation, makes him a trusted name in the industry.</p>
+                    </div>
+                </div>
+
+                <!-- Extended Team -->
+                <div class="glass-panel" style="margin-top: 4rem; padding: 3rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Additional Team Members</h3>
+                    <div class="content-grid" style="gap: 2rem;">
+                        <div class="group">
+                            <h4
+                                style="color: #0077b6; border-bottom: 2px solid #edf2f7; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                Students</h4>
+                            <ul>
+                                <li>Heneel Makwana</li>
+                                <li>Dimpi Gandhi</li>
+                                <li>Harsh Patel</li>
+                                <li>Tanisha</li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <h4
+                                style="color: var(--primary); border-bottom: 2px solid var(--glass-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                Extended Team</h4>
+                            <ul>
+                                <li>Dr. Nandlal Bharwani</li>
+                                <li>Mr. Hardik Sharma</li>
+                                <li>Dr. Dhruv Patel</li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <h4
+                                style="color: var(--primary); border-bottom: 2px solid var(--glass-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                Board of Directors</h4>
+                            <ul>
+                                <li>Dr. (Ms.) Manisha Abhijeet Salunke</li>
+                                <li>Shri. Rajendra Pradyumna Shah</li>
+                                <li>Ms. Prajkta R. Bhalerao</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media & Links -->
+        <section id="media" class="section media-section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Media Coverage</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- Media Gallery -->
+                <div class="media-gallery">
+                    <div class="media-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div class="media-image-container glass-panel">
+                            <img src="Media Coverage/Media1.png" alt="Media Coverage 1" class="media-img">
+                        </div>
+                        <div class="media-image-container glass-panel">
+                            <img src="Media Coverage/media2.png" alt="Media Coverage 2" class="media-img">
+                        </div>
+                        <div class="media-image-container glass-panel">
+                            <img src="Media Coverage/media3.jpg" alt="Media Coverage 3" class="media-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Gallery -->
+                <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">Video Features</h3>
+                <div class="video-grid">
+                    <div class="video-card glass-panel">
+                        <iframe src="https://www.youtube.com/embed/CYHKR6hFcTw" title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card glass-panel">
+                        <iframe src="https://www.youtube.com/embed/qFjvqCT8b8c" title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card glass-panel">
+                        <iframe src="https://www.youtube.com/embed/ZXdUR1WwXSw" title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card glass-panel">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7311270859535491072"
+                            height="100%" width="100%" frameborder="0" allowfullscreen=""
+                            title="Embedded post"></iframe>
+                    </div>
+                </div>
+
+                <!-- External News Links with Images -->
+                <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">In The News</h3>
+                <div class="external-links-grid">
+                    <a href="https://timesofindia.indiatimes.com/city/ahmedabad/bone-biopsy-device-to-reduce-damage-to-bone-tissue/articleshow/99003170.cms"
+                        target="_blank" class="external-card glass-panel">
+                        <img src="external/external1.png" alt="Times of India Article">
+                        <div style="padding: 1.5rem;">
+                            <h4>Bone biopsy device to reduce damage to bone tissue</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 0;">Times of India</p>
+                        </div>
+                    </a>
+
+                    <a href="https://tv9gujarati.com/gujarat/ahmedabad/ahmedabad-doctors-from-gujarat-cancer-research-institute-developed-an-intelligent-biopsy-gun-with-the-help-of-engineers-from-iitram-755250.html"
+                        target="_blank" class="external-card glass-panel">
+                        <img src="external/external2.png" alt="TV9 Gujarati Article">
+                        <div style="padding: 1.5rem;">
+                            <h4>Intelligent Biopsy Gun developed by GCRI & IITRAM</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 0;">TV9 Gujarati</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.patrika.com/ahmedabad-news/there-will-be-an-easy-way-to-take-tissue-for-bone-marrow-and-biopsy-8217574"
+                        target="_blank" class="external-card glass-panel">
+                        <img src="external/external3.jpg" alt="Patrika Article">
+                        <div style="padding: 1.5rem;">
+                            <h4>Easy way to take tissue for bone marrow biopsy</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 0;">Patrika News</p>
+                        </div>
+                    </a>
+
+                    <a href="https://zeenews.india.com/gujarati/gujarat/a-doctor-from-gujarat-cancer-research-institute-developed-an-intelligent-biopsy-gun-with-the-help-of-engineers-from-iitram-268325"
+                        target="_blank" class="external-card glass-panel">
+                        <img src="external/external4.jpg" alt="Zee News Article">
+                        <div style="padding: 1.5rem;">
+                            <h4>Doctor develops intelligent biopsy gun</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 0;">Zee News</p>
+                        </div>
+                    </a>
+                    <a href="https://timesofindia.indiatimes.com/city/ahmedabad/from-clinics-to-code-doctors-in-gujarat-take-the-startup-route/articleshow/122168205.cms"
+                        target="_blank" class="external-card glass-panel">
+                        <img src="Media Coverage/media4.png" alt="Times of India Article - Startup Route">
+                        <div style="padding: 1.5rem;">
+                            <h4>From clinics to code - Doctors take the startup route</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 0;">Times of India</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prosthetic Hand Section -->
+        <section id="prosthetic-hand" style="padding: 6rem 0; position: relative; z-index: 10;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem; position: relative;">
+                    Prosthetic Hand <span
+                        style="display: block; font-size: 1.2rem; font-weight: 300; margin-top: 10px;">(Ahmedabad
+                        Hand)</span>
+                    <div
+                        style="width: 80px; height: 4px; background: var(--primary); margin: 15px auto 0; border-radius: 2px;">
+                    </div>
+                </h2>
+
+                <div class="glass-panel" style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; align-items: start;">
+                        <!-- Video -->
+                        <div style="width: 100%;">
+                            <h4 style="text-align: center; margin-bottom: 1rem;">Demo Video</h4>
+                            <div
+                                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+                                <iframe src="https://drive.google.com/file/d/1N-4vZ-jduqz7vcqEOb3laYFeVzI4RPQ6/preview"
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
+                                    allow="autoplay"></iframe>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn Post -->
+                        <div style="width: 100%;">
+                            <h4 style="text-align: center; margin-bottom: 1rem;">LinkedIn Feature</h4>
+                            <div style="background: white; border-radius: 10px; overflow: hidden;">
+                                <iframe
+                                    src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7315967969044447233"
+                                    height="600" width="100%" frameborder="0" allowfullscreen=""
+                                    title="Embedded post"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact"
+        style="background: var(--bg-color); padding: 4rem 1rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); position: relative;">
+        <!-- Glass Effect Background for Footer if needed, or just transparent on body bg -->
+        <div class="container">
+            <div class="footer-contact" style="margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--text-main); font-size: 1.5rem;">INTENTIO BIOPSY DEVICE
+                    PRIVATE LIMITED</h3>
+                <p style="margin-bottom: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                    <i class="fas fa-map-marker-alt" style="color: #0077b6; margin-right: 8px;"></i>
+                    210-212, Vrajbhumi Complex, B/h Shilp Bldg, Nr. Tele Exchange,<br>Navrangpura, Ahmedabad - 380009,
+                    Gujarat
+                </p>
+                <p style="color: var(--text-muted);">
+                    <i class="fas fa-envelope" style="color: #0077b6; margin-right: 8px;"></i>
+                    <a href="mailto:intentiobiosy@gmail.com"
+                        style="text-decoration: none; color: inherit; transition: color 0.3s;">intentiobiosy@gmail.com</a>
+                </p>
+            </div>
+            <div style="width: 60px; height: 3px; background: #0077b6; margin: 0 auto 2rem; border-radius: 2px;"></div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2025 Intentio Biopsy Device Private Limited.
+                All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox for Award Images -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Floating Contact Button -->
+    <a href="#contact" class="floating-contact-btn">CONTACT US</a>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <link rel="stylesheet" href="chat.css">
+</body>
+
+</html>

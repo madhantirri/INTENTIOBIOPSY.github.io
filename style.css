@@ -1,0 +1,1059 @@
+/* Global Reset & Typography */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --primary: #0077b6;
+    --primary-dark: #023e8a;
+    --accent: #00b4d8;
+    --bg-color: #f0f8ff;
+
+    /* GLASS Variables - INCREASED OPACITY FOR READABILITY */
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --glass-blur: blur(20px);
+
+    --text-main: #0f172a;
+    /* Slate 900 (Darker) */
+    --text-muted: #334155;
+    /* Slate 700 (Darker) */
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-main);
+    line-height: 1.7;
+    background: radial-gradient(circle at 50% 50%, #f0f9ff 0%, #e0f2fe 100%);
+    overflow-x: hidden;
+}
+
+/* 3D Background Canvas */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary-dark);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* --- GLASSMORPHISM UTILITIES --- */
+.glass-panel,
+.card,
+.feature-box,
+.team-member,
+.product-showcase,
+.clay-card,
+.award-item {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover,
+.card:hover,
+.feature-box:hover,
+.team-member:hover,
+.award-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(31, 38, 135, 0.12);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-dark);
+    border: 1px solid var(--primary);
+    margin-left: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+    background: rgba(0, 119, 182, 0.05);
+}
+
+
+/* Sections General */
+.section {
+    padding: 6rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 750px;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.hero-subtitle {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 119, 182, 0.1);
+    color: var(--primary-dark);
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-section .content-grid,
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    align-items: start;
+}
+
+.feature-box {
+    padding: 2.5rem;
+}
+
+.feature-box h3 {
+    margin-bottom: 1.5rem;
+}
+
+.feature-box ul li {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    position: relative;
+    list-style: none;
+}
+
+.feature-box ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+
+/* Product Section */
+.product-showcase {
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+}
+
+.clay-image {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto 3rem auto;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Awards */
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.award-item {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1.5rem;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.award-img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    mix-blend-mode: multiply;
+}
+
+.award-item:hover .award-img {
+    transform: scale(1.03);
+}
+
+.award-item h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--text-muted);
+}
+
+
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.team-member {
+    padding: 0;
+    overflow: hidden;
+    background: #ffffff;
+    /* Fallback */
+    background: var(--glass-bg);
+    /* Use the new high-opacity variable */
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.member-info {
+    padding: 3rem;
+    background: transparent;
+    /* Remove double layering for cleaner text */
+    height: 100%;
+}
+
+.team-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.role {
+    display: inline-block;
+    background: rgba(0, 119, 182, 0.1);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Contact */
+.contact-section {
+    text-align: center;
+    padding-bottom: 8rem;
+}
+
+.contact-card {
+    display: inline-block;
+    padding: 4rem;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+}
+
+.contact-card i {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-right: 12px;
+}
+
+/* Media Gallery Styles */
+.media-gallery {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.media-image-container {
+    height: 350px;
+    /* Fixed height for uniformity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.media-img {
+    max-width: 100%;
+    max-height: 100%;
+    /* Ensure it fits inside the container */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* Don't crop text */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    /* Indicate clickable */
+    transition: transform 0.3s ease;
+}
+
+.media-image-container:hover .media-img {
+    transform: scale(1.05);
+}
+
+.external-links-grid,
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.external-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    /* Ensure main card is rounded */
+}
+
+.external-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    /* Round the image separately */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: transform 0.4s ease;
+}
+
+.external-card:hover img {
+    transform: scale(1.05);
+    /* Zoom image on hover */
+}
+
+.video-card {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-card iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background: #0f172a;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4rem;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background: var(--primary-dark);
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        height: auto;
+        padding-bottom: 2rem;
+        width: 90%;
+        margin-right: 5%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        transform: translateY(-150%);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Specific I-Bone Biopsy Fixes */
+#ibone-biopsy .clay-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid white;
+}
+
+/* Dark Mode Support */
+body.dark-mode {
+    background: radial-gradient(circle at 50% 50%, #0f172a 0%, #1e293b 100%);
+    color: #f1f5f9;
+}
+
+/* Dark Mode Variables Configuration */
+.dark-mode {
+    --bg-color: #0f172a;
+    --primary: #38bdf8;
+    /* Lighter blue for better contrast on dark */
+    --primary-dark: #f0f9ff;
+    /* White/Lightest blue for Headings */
+    --accent: #22d3ee;
+
+    /* Dark Glass Surface - INCREASED FOR READABILITY */
+    --glass-bg: rgba(30, 41, 59, 0.95);
+    /* Slate 800 with opacity */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+    --text-main: #f1f5f9;
+    /* Slate 100 */
+    --text-muted: #cbd5e1;
+    /* Slate 300 */
+}
+
+/* Navigation specific */
+.dark-mode .navbar.scrolled {
+    background: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .nav-links a {
+    color: var(--text-main);
+}
+
+.dark-mode .nav-links a:hover {
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .logo {
+    color: var(--text-main);
+}
+
+/* Card & Glass Adjustments */
+.dark-mode .glass-panel,
+.dark-mode .card,
+.dark-mode .feature-box,
+.dark-mode .team-member,
+.dark-mode .product-showcase,
+.dark-mode .award-item,
+.dark-mode .external-card,
+.dark-mode .contact-card,
+.dark-mode .btn,
+.dark-mode .btn-outline {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Backgrounds */
+.dark-mode .bg-light {
+    background: transparent;
+    /* Remove light backgrounds from sections */
+}
+
+/* Hover Effects */
+.dark-mode .glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(30, 41, 59, 0.85);
+}
+
+/* Fund Items Responsive Text */
+.fund-item {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    /* Adapt to theme */
+}
+
+/* Ensure glass panels in dark mode have correct text color */
+.dark-mode .glass-panel {
+    color: var(--text-main);
+}
+
+.dark-mode .fund-item {
+    color: var(--primary-dark);
+    /* Make it pop in dark mode */
+}
+
+/* Image Handling */
+.dark-mode .award-img {
+    mix-blend-mode: normal;
+    /* Disable multiply on dark background */
+}
+
+.dark-mode .clay-image {
+    opacity: 0.9;
+    /* Slightly dim bright images */
+}
+
+/* Text Overrides */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4 {
+    color: var(--primary-dark);
+}
+
+.dark-mode p,
+.dark-mode li {
+    color: var(--text-muted);
+}
+
+.dark-mode .subtitle {
+    color: var(--primary);
+}
+
+/* Button override specifically */
+.dark-mode .btn-outline {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+.dark-mode .btn-outline:hover {
+    background: var(--text-main);
+    color: #0f172a;
+}
+
+/* --- PRELOADER (ECG Animation) --- */
+#preloader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    /* Glassmorphism simulation */
+    backdrop-filter: blur(20px);
+    /* The requested blur effect */
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Stack ECG and Text */
+    transition: opacity 0.8s ease-out, visibility 0.8s;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Preloader Logo Text */
+.preloader-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    /* Slate 800 */
+    margin-top: 1rem;
+    letter-spacing: 2px;
+    opacity: 0;
+    /* Fade in with animation */
+    animation: fade-in-text 1s ease-out forwards 0.5s;
+}
+
+.preloader-text span {
+    color: #0077b6;
+    /* Primary Blue */
+}
+
+/* Dark Mode Adjustment */
+body.dark-mode #preloader {
+    background: rgba(15, 23, 42, 0.7);
+}
+
+body.dark-mode .preloader-text {
+    color: #f1f5f9;
+    /* Light Slate */
+}
+
+body.dark-mode .preloader-text span {
+    color: #38bdf8;
+    /* Light Blue */
+}
+
+@keyframes fade-in-text {
+    to {
+        opacity: 1;
+    }
+}
+
+
+.ecg-container {
+    width: 600px;
+    /* Enlarged size */
+    height: 300px;
+    position: relative;
+}
+
+.ecg-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.ecg-line {
+    fill: none;
+    stroke: #0077b6;
+    /* Medical Blue */
+    stroke-width: 5;
+    /* Thicker for larger size */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 5px rgba(0, 119, 182, 0.6));
+    stroke-dasharray: 1000;
+    /* Increased for safety */
+    stroke-dashoffset: 1000;
+    animation: ecg-draw 1.8s ease-in-out forwards;
+    /* Play once, faster */
+}
+
+body.dark-mode .ecg-line {
+    stroke: #38bdf8;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.9));
+}
+
+@keyframes ecg-draw {
+    0% {
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
+}
+
+/* --- AWARD LOADER --- */
+#award-loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 10002;
+    /* Topmost */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+#award-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.dark-mode #award-loader {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+/* --- LIGHTBOX (Image Viewer) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10003;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    animation: zoom 0.3s;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10004;
+    transition: 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #bbb;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .lightbox-content {
+        width: 95%;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+/* Night Mode Toggle Animation */
+body.dark-mode #theme-toggle img {
+    transform: rotate(180deg);
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}
+
+/* --- Team Profile Dark Mode Fixes --- */
+body.dark-mode .team-member,
+body.dark-mode .glass-panel {
+    background: rgba(2, 6, 23, 0.95) !important;
+    /* Almost Opaque Dark Background */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    color: #ffffff !important;
+    /* Pure White Text */
+}
+
+body.dark-mode .team-member h3 {
+    color: #e0f2fe !important;
+    /* Very Light Blue/White Heading */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .team-member p {
+    color: #ffffff !important;
+    /* Force Pure White Paragraphs */
+    font-weight: 400;
+    /* Ensure not too thin */
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    /* Shadow for legibility */
+}
+
+/* User Role Badge Styling */
+.role {
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    background: rgba(0, 119, 182, 0.1);
+    color: #0077b6;
+    display: inline-block;
+    margin-top: 8px;
+    border: 1px solid rgba(0, 119, 182, 0.2);
+}
+
+body.dark-mode .role {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* --- Limitations & Solution Section (Force Dark Theme) --- */
+.limitations-solution-wrapper {
+    /* Local Variable Override for Dark Context */
+    --text-muted: #cbd5e1;
+}
+
+.limitations-solution-wrapper .glass-panel {
+    background: rgba(10, 25, 60, 0.95) !important;
+    /* Force Rich Dark Blue Bg */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    color: #f1f5f9;
+}
+
+.limitations-solution-wrapper h3 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Floating Vertical Contact Button --- */
+.floating-contact-btn {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    background: #0077b6;
+    /* Primary Blue */
+    color: #ffffff;
+    padding: 1.5rem 0.6rem;
+    border-radius: 10px 0 0 10px;
+    /* Rounded on left side */
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.floating-contact-btn:hover {
+    background: #023e8a;
+    padding-right: 1rem;
+    /* Expand width slightly */
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .floating-contact-btn {
+    background: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* --- Hero Section Dark Mode Fix --- */
+body.dark-mode .hero-content {
+    background: rgba(2, 6, 23, 0.85);
+    /* Dark Glass */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .hero-subtitle {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
